@@ -1,0 +1,46 @@
+{
+  "name": "common-access-control",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "server": "cross-env NODE_ENV=development nodemon app.js",
+    "migrate": "sequelize-cli db:migrate --config config/database.js",
+    "migrate:undo": "sequelize-cli db:migrate:undo --config config/database.js",
+    "migrate:undo:all": "sequelize-cli db:migrate:undo:all --config config/database.js",
+    "seed": "sequelize-cli db:seed:all --config config/database.js",
+    "seed:undo": "sequelize-cli db:seed:undo:all --config config/database.js",
+    "db:setup": "npm run migrate && npm run seed"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "bcryptjs": "^3.0.3",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "firebase-admin": "^13.6.0",
+    "jsonwebtoken": "^9.0.3",
+    "multer": "^2.0.2",
+    "mysql2": "^3.17.1",
+    "nodemailer": "^7.0.13",
+    "passport": "^0.7.0",
+    "passport-apple": "^2.0.2",
+    "passport-google-oauth20": "^2.0.0",
+    "qs": "^6.14.1",
+    "sequelize": "^6.37.7",
+    "twilio": "^5.11.1"
+  },
+  "devDependencies": {
+    "cross-env": "^10.1.0",
+    "nodemon": "^3.1.14",
+    "sequelize-cli": "^6.6.5"
+  }
+
+  
+
+}
