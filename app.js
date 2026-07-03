@@ -47,6 +47,11 @@ app.listen(process.env.PORT, "0.0.0.0", () => {
   console.log("Server running http://0.0.0.0:3000"); //accessible from outside the machine (important for Docker / cloud)
 });
 
+
+app.get("/", (req, res) => {
+  res.send("Tiffany Backend API is running successfully 🚀");
+});
+
 /* ---------------- DB CONNECT (NON-BLOCKING) ---------------- */
 
 (async () => {
