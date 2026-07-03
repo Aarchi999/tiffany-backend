@@ -68,7 +68,7 @@ app.get("/", (req, res) => {
     // require("./cron/index"); 
 
   } catch (err) {
-    console.error('❌ DB error:', err.message);
+    console.error('❌ DB error:', err);
     // ❌ DO NOT EXIT
   }
 })();
