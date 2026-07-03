@@ -44,7 +44,7 @@ app.use((req, res, next) => {
 
 /* ---------------- START SERVER (ONLY ONCE) ---------------- */
 app.listen(process.env.PORT, "0.0.0.0", () => {
-  console.log("Server running http://0.0.0.0:3000"); //accessible from outside the machine (important for Docker / cloud)
+  console.log("Server running http:tiffany-front-project.vercel.app"); //accessible from outside the machine (important for Docker / cloud)
 });
 
 
