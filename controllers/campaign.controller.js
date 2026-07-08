@@ -489,7 +489,15 @@ try {
 
     emailStatus = "success";
   }
-} catch (err) {
+} 
+catch (err) {
+
+  console.log("=================================");
+  console.log("EMAIL SENDING FAILED");
+  console.log(err);
+  console.log(err.message);
+  console.log("=================================");
+
   await winner.update({
     email_sent: 0,
     email_failed: 1
