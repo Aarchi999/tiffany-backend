@@ -108,7 +108,10 @@ exports.sendWinnerEmail = async ({ to, name, campaign, prize, coupon }) => {
 `
   };
 
-  await transporter.sendMail(mailOptions);
+const info = await transporter.sendMail(mailOptions);
+
+console.log("Mail sent successfully");
+console.log(info);
 };
 
 // Generate a 6-digit OTP as string
