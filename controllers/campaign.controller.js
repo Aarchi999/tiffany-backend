@@ -473,7 +473,12 @@ try {
   const prize = await Prize.findByPk(prizeAllocation.prize_id);
 
   if (customer?.email) {
+     console.log("Customer:", customer);
+console.log("Customer Email:", customer?.email);
+console.log("Campaign:", campaign?.name);
+console.log("Sending email...");
     await sendWinnerEmail({
+       console.log("Email sent successfully");
       to: customer.email,
       name: `${customer.first_name} ${customer.last_name}`,
       campaign: campaign.name,
