@@ -480,11 +480,11 @@ console.log("Sending email...");
     await sendWinnerEmail({
       to: customer.email,
       name: `${customer.first_name} ${customer.last_name}`,
-       console.log("Email sent successfully");
       campaign: campaign.name,
       prize: prize?.name || "Prize",
       coupon: coupon.coupon_code
     });
+       console.log("Email sent successfully");
 
     await winner.update({
       email_sent: 1,
