@@ -484,13 +484,13 @@ console.log("Sending email...");
       prize: prize?.name || "Prize",
       coupon: coupon.coupon_code
     });
-       console.log("Email sent successfully");
 
     await winner.update({
       email_sent: 1,
       email_sent_at: new Date(),
       email_failed: 0
     });
+       console.log("Email sent successfully");
 
     emailStatus = "success";
   }
