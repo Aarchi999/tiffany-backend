@@ -484,28 +484,22 @@ console.log("Sending email...");
       prize: prize?.name || "Prize",
       coupon: coupon.coupon_code
     });
+       console.log("Email sent successfully");
 
     await winner.update({
       email_sent: 1,
       email_sent_at: new Date(),
       email_failed: 0
     });
-       console.log("Email sent successfully");
 
     emailStatus = "success";
   }
-} 
-catch (err) {
-
-  console.log("=================================");
-  console.log("EMAIL SENDING FAILED");
-  console.log(err);
-  console.log(err.message);
-  console.log("=================================");
+} catch (err) {
+  console.error("Email Error:", err);
 
   await winner.update({
     email_sent: 0,
-    email_failed: 1
+    email_failed: 1,
   });
 
   emailStatus = "failed";
