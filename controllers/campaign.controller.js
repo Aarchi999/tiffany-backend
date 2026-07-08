@@ -478,9 +478,9 @@ console.log("Customer Email:", customer?.email);
 console.log("Campaign:", campaign?.name);
 console.log("Sending email...");
     await sendWinnerEmail({
-       console.log("Email sent successfully");
       to: customer.email,
       name: `${customer.first_name} ${customer.last_name}`,
+       console.log("Email sent successfully");
       campaign: campaign.name,
       prize: prize?.name || "Prize",
       coupon: coupon.coupon_code
