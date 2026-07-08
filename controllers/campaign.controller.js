@@ -322,7 +322,7 @@ exports.selectWinner = async (req, res) => {
       coupon_code: random.invoice?.coupon?.coupon_code || null,
     });
   } catch (err) {
-    console.error("selectWinner error:", err);
+   
     return res.status(500).json({
       status: 500,
       message: "Server error",
@@ -473,10 +473,7 @@ try {
   const prize = await Prize.findByPk(prizeAllocation.prize_id);
 
   if (customer?.email) {
-     console.log("Customer:", customer);
-console.log("Customer Email:", customer?.email);
-console.log("Campaign:", campaign?.name);
-console.log("Sending email...");
+   
     await sendWinnerEmail({
       to: customer.email,
       name: `${customer.first_name} ${customer.last_name}`,
@@ -484,7 +481,7 @@ console.log("Sending email...");
       prize: prize?.name || "Prize",
       coupon: coupon.coupon_code
     });
-       console.log("Email sent successfully");
+     
 
     await winner.update({
       email_sent: 1,
